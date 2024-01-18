@@ -1,4 +1,4 @@
-package pw.skills;
+
 
 public class aboutpackage {
     public String str_1 = "I am a public member";
