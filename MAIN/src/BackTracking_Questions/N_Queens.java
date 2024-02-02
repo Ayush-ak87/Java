@@ -1,6 +1,27 @@
 package BackTracking_Questions;
 
 public class N_Queens {
+    public static boolean isSafe(char board[][],int row,int col) {
+        //vertically up 
+        for (int i = row-1; i >=0; i--) {
+            if (board[i][col]=='Q') {
+                return false;
+            }
+        }
+        //diagonal left up
+        for (int i = row-1, j=col-1; i>=0 && j>=0; i--,j--) {
+            if (board[i][j]=='Q') {
+                return false;
+            }
+        }
+        //diagonal right up
+        for (int i = row-1, j=col+1; i>=0 && j<board.length; i--,j++) {
+            if (board[i][j]=='Q') {
+                return false;
+            }
+        }
+        return true;
+    }
     public static void nQueens(char board[][],int row) {
         //base class
         if (row==board.length) {
@@ -9,9 +30,11 @@ public class N_Queens {
         }
         // column loop
         for (int i = 0; i < board.length; i++) {
-            board[row][i] = 'Q';
-            nQueens(board, row+1);
-            board[row][i] = '.';
+            if(isSafe(board,row,i)) {
+                board[row][i] = 'Q';
+                nQueens(board, row+1);
+                board[row][i] = 'x';
+            }
         }
     }
     public static void printBoard(char board[][]) {
@@ -24,12 +47,12 @@ public class N_Queens {
         }
     }
     public static void main(String[] args) {
-        int n = 2;
+        int n = 4;
         char board[][]=new char[n][n];
         //initialize
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                board[i][j] = '.';
+                board[i][j] = 'x';
             }
         }
         nQueens(board, 0);
