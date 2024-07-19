@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 class Algebra {
     int add(int a , int b ){
