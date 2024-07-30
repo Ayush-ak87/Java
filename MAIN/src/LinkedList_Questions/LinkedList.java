@@ -12,11 +12,13 @@ public class LinkedList {
     }
     public static Node head;
     public static Node tail;
+    public static int size;
     //Methods
     //Add_First In Java
     public void addFirst(int data) {
         //Step 1 = Create New Node
         Node  newNode = new Node(data);
+        size++;
         if (head == null) {
             head = tail = newNode;
             return;
@@ -29,6 +31,7 @@ public class LinkedList {
 
     public void addLast(int data) {
         Node  newNode = new Node(data);
+        size++;
         if (head == null) {
             head = tail = newNode;
             return;
@@ -56,6 +59,7 @@ public class LinkedList {
             return;
         }
         Node newNode = new Node(data);
+        size++;
         Node temp = head;
         int i = 0;
 
@@ -77,6 +81,7 @@ public class LinkedList {
         ll.print();
         ll.add(2, 9);
         ll.print();
+        System.out.println(LinkedList.size);
     }
 
 }
