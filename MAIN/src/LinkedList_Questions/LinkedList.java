@@ -109,6 +109,19 @@ public class LinkedList {
         return val;
     }
 
+    public int itrSearch(int key) {
+        Node temp = head;
+        int i = 0;
+        while (temp!=null) {
+            if (temp.data == key) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.print();
@@ -126,6 +139,7 @@ public class LinkedList {
         ll.removeLast();
         ll.print();
         System.out.println(LinkedList.size);
+        System.out.println(ll.itrSearch(3));
     }
 
 }
