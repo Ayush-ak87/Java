@@ -121,7 +121,7 @@ public class LinkedList {
         }
         return -1;
     }
-
+    // Recursive Search
     public int helper(Node head, int key) {
         if (head == null) {
             return -1;
@@ -138,6 +138,21 @@ public class LinkedList {
 
     public int recSearch(int key) {
         return helper(head,key);
+    }
+
+    //Reverse a LinkedList
+    public void reverse() {
+        Node prev = null;
+        Node curr = head;
+        Node next;
+
+        while (curr!=null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
 
     public static void main(String[] args) {
@@ -159,6 +174,8 @@ public class LinkedList {
         System.out.println(LinkedList.size);
         System.out.println(ll.itrSearch(3));
         System.out.println(ll.recSearch(3));
+        ll.reverse();
+        ll.print();
     }
 
 }
