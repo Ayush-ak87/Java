@@ -218,6 +218,19 @@ public class LinkedList {
         return true;
     }
 
+    public static boolean isCycle() {  // Floyd's Cycle Finding Algorithm
+        Node slow = head;
+        Node fast = head;
+        while (fast!=null && fast.next!=null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.print();
@@ -248,6 +261,7 @@ public class LinkedList {
         ll.print();
         System.out.println(ll.checkPalindrome());
         ll.print();
+        System.out.println(isCycle());
     }
 
 }
