@@ -28,4 +28,10 @@ public class Next_Greater {
         }
         System.out.println();
     }
+
+    //next greater right
+    //next greater left
+    //next smaller right
+    //next smaller left
+    
 }
