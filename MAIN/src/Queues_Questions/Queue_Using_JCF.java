@@ -6,7 +6,7 @@ public class Queue_Using_JCF {
 
     public static void main(String[] args) {
         //Queue q = new Queue();
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>(); // Also Using ArrayDeque
         q.add(1);
         q.add(2);
         q.add(3);
